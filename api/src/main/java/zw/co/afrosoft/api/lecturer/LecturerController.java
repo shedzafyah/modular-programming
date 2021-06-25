@@ -17,12 +17,12 @@ public class LecturerController {
         this.lecturerService = lecturerService;
     }
 
-    @GetMapping("/list-lecturers")
+    @GetMapping("/lecturers")
     public List<Lecturer> listAll(){
         return lecturerService.listAll();
     }
 
-    @PostMapping("/add-lecturer")
+    @PostMapping("/lecturer")
     public void add(@RequestBody Lecturer lecturer) {
         lecturerService.save(lecturer);
     }

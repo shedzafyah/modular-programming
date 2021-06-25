@@ -22,26 +22,25 @@ public class Student extends BaseEntity {
 
     @ManyToMany
     @JoinTable(
-            joinColumns = @JoinColumn(name = "student_id"),
-            inverseJoinColumns = @JoinColumn(name = "course_id")
+            joinColumns = @JoinColumn(name = "student_id",nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "course_id",nullable = false)
     )
     private List<Course> courses;
-    /*
+
     @ManyToOne
-    @JoinColumn(name ="lecturer_id")
+    @JoinColumn(name = "lecturer_id")
     private Lecturer lecturer;
-
-
-     */
 
     public Student() {
 
     }
 
-    public Student(String firstname, String lastname, String email) {
+    public Student(String firstname, String lastname, String email, List<Course> courses, Lecturer lecturer) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
+        this.courses = courses;
+        this.lecturer = lecturer;
     }
 
     public String getFirstname() {

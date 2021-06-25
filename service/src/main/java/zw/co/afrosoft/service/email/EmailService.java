@@ -19,7 +19,7 @@ public class EmailService {
         message.setFrom("springboot894@gmail.com");
         message.setTo(student.getEmail());
         message.setSubject("Testing");
-        message.setText("Your registration was a success. Thank you " +" "+ student.getFirstname() + " " +student.getLastname() +" "+"enrolling with us..");
+        message.setText("Your registration was a success. Thank you " +" "+ student.getFirstname().toUpperCase() + " " +student.getLastname().toUpperCase() +" "+"enrolling with us.");
         javaMailSender.send(message);
     }
 

@@ -1,9 +1,8 @@
 package zw.co.afrosoft.persistence.course;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import zw.co.afrosoft.domain.course.Course;
-import zw.co.afrosoft.persistence.base.*;
+import org.springframework.data.jpa.repository.*;
+import zw.co.afrosoft.domain.course.*;
 
-public interface CourseRepository extends BaseRepository<Course> {
+public interface CourseRepository extends JpaRepository<Course,Long> {
 
 }

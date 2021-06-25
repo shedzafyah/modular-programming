@@ -16,8 +16,6 @@ public class Course extends BaseEntity {
     @Column(nullable = false,length = 100, unique = true)
     private Code code;
 
-    @ManyToMany(mappedBy = "courses")
-    private List<Student> students;
 
     public Course() {
 

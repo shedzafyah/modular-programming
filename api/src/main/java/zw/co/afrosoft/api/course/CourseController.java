@@ -17,12 +17,12 @@ public class CourseController {
         this.courseService=courseService;
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/list-courses")
+    @GetMapping("/courses")
     public List<Course> listAll(){
         return courseService.listAll();
     }
 
-    @PostMapping("/add-course")
+    @PostMapping("/course")
     public void addNewCourse(@RequestBody Course course) {
         courseService.save(course);
     }

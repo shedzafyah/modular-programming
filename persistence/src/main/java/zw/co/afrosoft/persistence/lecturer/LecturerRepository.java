@@ -1,9 +1,8 @@
 package zw.co.afrosoft.persistence.lecturer;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import zw.co.afrosoft.domain.lecturer.Lecturer;
-import zw.co.afrosoft.persistence.base.*;
+import org.springframework.data.jpa.repository.*;
+import zw.co.afrosoft.domain.lecturer.*;
 
-public interface LecturerRepository extends BaseRepository<Lecturer> {
+public interface LecturerRepository extends JpaRepository<Lecturer,Long> {
 
 }

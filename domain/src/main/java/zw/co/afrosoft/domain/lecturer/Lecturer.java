@@ -2,8 +2,10 @@ package zw.co.afrosoft.domain.lecturer;
 
 import zw.co.afrosoft.domain.base.*;
 import zw.co.afrosoft.domain.department.Department;
+import zw.co.afrosoft.domain.student.*;
 
 import javax.persistence.*;
+import java.util.*;
 
 @Entity
 public class Lecturer extends BaseEntity {
@@ -18,8 +20,11 @@ public class Lecturer extends BaseEntity {
     private String lastname;
 
     @ManyToOne
-    @JoinColumn(name = "department_id",nullable = false,unique = true)
+    @JoinColumn(name = "department_id")
     private Department department;
+
+    @OneToMany(mappedBy = "lecturer")
+    private List<Student> students;
 
     public Lecturer() {
 

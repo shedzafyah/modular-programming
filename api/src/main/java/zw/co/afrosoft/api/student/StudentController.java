@@ -21,12 +21,12 @@ public class StudentController {
         this.emailService = emailService;
     }
 
-    @GetMapping("/list-students")
+    @GetMapping("/students")
     public List<Student> listAll(){
         return studentService.listAll();
     }
 
-    @PostMapping("/add-student")
+    @PostMapping("/student")
     public void add(@RequestBody Student student) {
         if (student != null) {
             studentService.add(student);

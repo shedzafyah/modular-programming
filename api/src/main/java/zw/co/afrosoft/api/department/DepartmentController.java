@@ -17,17 +17,17 @@ public class DepartmentController {
         this.departmentService = departmentService;
     }
 
-    @GetMapping("/listdepartments")
+    @GetMapping("/departments")
     public List<Department> listAll(){
         return departmentService.listAll();
     }
 
-    @PostMapping("/add-department")
+    @PostMapping("/department")
     public void addNewDepartment(@RequestBody Department department) {
         departmentService.save(department);
     }
 
-    @DeleteMapping("/removed/{id}")
+    @DeleteMapping("/department/{id}")
     public void remove(@PathVariable Long id) {
         departmentService.remove(id);
     }
