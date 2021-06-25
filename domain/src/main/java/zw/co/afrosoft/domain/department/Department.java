@@ -1,15 +1,11 @@
 package zw.co.afrosoft.domain.department;
 
-import zw.co.afrosoft.domain.lecturer.*;
+import zw.co.afrosoft.domain.base.*;
 
 import javax.persistence.*;
-import java.util.*;
 
 @Entity
-public class Department {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Department extends BaseEntity {
 
     @Column(nullable = false,length = 100, unique = true)
     private String name;
@@ -28,10 +24,6 @@ public class Department {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Long getId() {
-        return id;
     }
 
 

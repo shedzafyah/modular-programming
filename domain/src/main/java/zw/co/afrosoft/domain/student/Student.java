@@ -1,6 +1,7 @@
 package zw.co.afrosoft.domain.student;
 
 
+import zw.co.afrosoft.domain.base.*;
 import zw.co.afrosoft.domain.course.*;
 import zw.co.afrosoft.domain.lecturer.*;
 
@@ -8,10 +9,7 @@ import javax.persistence.*;
 import java.util.*;
 
 @Entity
-public class Student {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Student extends BaseEntity {
 
     @Column(nullable = false,length = 24)
     private String firstname;
@@ -69,12 +67,4 @@ public class Student {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public Long getId() {
-        return id;
-    }
-
-
-
-
 }

@@ -35,7 +35,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="api" />
+    <orderEntry type="library" name="Maven: zw.co.afrosoft:api:0.0.1-SNAPSHOT" level="project" />
     <orderEntry type="module" module-name="service" />
     <orderEntry type="module" module-name="persistence" />
     <orderEntry type="module" module-name="domain" />

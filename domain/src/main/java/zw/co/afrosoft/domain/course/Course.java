@@ -1,15 +1,13 @@
 package zw.co.afrosoft.domain.course;
 
+import zw.co.afrosoft.domain.base.*;
 import zw.co.afrosoft.domain.student.*;
 
 import javax.persistence.*;
 import java.util.*;
 
 @Entity
-public class Course {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Course extends BaseEntity {
 
     @Column(nullable = false,length = 100, unique = true)
     private String name;
@@ -46,9 +44,6 @@ public class Course {
         this.code = code;
     }
 
-    public Long getId() {
-        return id;
-    }
 
 
 }

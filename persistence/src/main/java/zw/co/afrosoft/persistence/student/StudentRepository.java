@@ -1,9 +1,9 @@
 package zw.co.afrosoft.persistence.student;
 
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import zw.co.afrosoft.domain.student.Student;
+import zw.co.afrosoft.domain.student.*;
+import zw.co.afrosoft.persistence.base.*;
 
-public interface StudentRepository extends JpaRepository<Student, Long> {
+public interface StudentRepository extends BaseRepository<Student> {
 
 }

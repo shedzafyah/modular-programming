@@ -1,14 +1,12 @@
 package zw.co.afrosoft.domain.lecturer;
 
+import zw.co.afrosoft.domain.base.*;
 import zw.co.afrosoft.domain.department.Department;
 
 import javax.persistence.*;
 
 @Entity
-public class Lecturer {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Lecturer extends BaseEntity {
 
     @Enumerated(value = EnumType.STRING)
     private Title title;
@@ -65,12 +63,5 @@ public class Lecturer {
     public void setDepartment(Department department) {
         this.department = department;
     }
-
-    public Long getId() {
-        return id;
-    }
-
-
-
 
 }
