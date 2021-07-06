@@ -30,11 +30,9 @@ public class StudentController {
     public void add(@RequestBody Student student) {
         if (student != null) {
             studentService.add(student);
-          emailService.sendEmail(student);
+            //emailService.sendEmail(student);
         }
-
     }
-
     @DeleteMapping("/student/{id}")
     public void remove(@PathVariable Long id) {
         studentService.remove(id);
