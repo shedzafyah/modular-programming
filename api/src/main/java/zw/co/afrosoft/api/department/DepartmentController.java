@@ -18,12 +18,12 @@ public class DepartmentController {
         this.departmentService = departmentService;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public List<Department> listAll(){
         return departmentService.listAll();
     }
 
-    @PostMapping("/")
+    @PostMapping
     public void addNewDepartment(@RequestBody Department department) {
         departmentService.save(department);
     }

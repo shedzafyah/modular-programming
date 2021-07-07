@@ -8,6 +8,7 @@ import zw.co.afrosoft.service.course.*;
 import java.util.*;
 
 @RestController
+@RequestMapping("/course")
 public class CourseController {
 
     private final CourseService courseService;
@@ -17,22 +18,22 @@ public class CourseController {
         this.courseService=courseService;
     }
 
-    @GetMapping("/courses")
+    @GetMapping
     public List<Course> listAll(){
         return courseService.listAll();
     }
 
-    @PostMapping("/course")
+    @PostMapping
     public void addNewCourse(@RequestBody Course course) {
         courseService.save(course);
     }
 
-    @DeleteMapping("/course/{id}")
+    @DeleteMapping("/{id}")
     public void remove(@PathVariable Long id) {
         courseService.remove(id);
     }
 
-    @PutMapping("/course/{id}")
+    @PutMapping("/{id}")
     public Course update(@RequestBody Course course, @PathVariable Long id) {
         Course existingCourse = courseService.findByiId(id);
         existingCourse.setCode(course.getCode());
@@ -41,7 +42,7 @@ public class CourseController {
         return existingCourse;
     }
 
-    @GetMapping("/course/{id}")
+    @GetMapping("/{id}")
     public Course findById(@PathVariable Long id) {
         return courseService.findByiId(id);
     }

@@ -8,6 +8,7 @@ import zw.co.afrosoft.service.lecturer.LecturerService;
 import java.util.List;
 
 @RestController
+@RequestMapping("/lecturer")
 public class LecturerController {
 
     private final LecturerService lecturerService;
@@ -17,22 +18,22 @@ public class LecturerController {
         this.lecturerService = lecturerService;
     }
 
-    @GetMapping("/lecturers")
+    @GetMapping
     public List<Lecturer> listAll(){
         return lecturerService.listAll();
     }
 
-    @PostMapping("/lecturer")
+    @PostMapping
     public void add(@RequestBody Lecturer lecturer) {
         lecturerService.save(lecturer);
     }
 
-    @DeleteMapping("/lecturer/{id}")
+    @DeleteMapping("/{id}")
     public void remove(@PathVariable Long id) {
         lecturerService.remove(id);
     }
 
-    @PutMapping("/lecturer/{id}")
+    @PutMapping("/{id}")
     public Lecturer update(@RequestBody Lecturer lecturer, @PathVariable Long id) {
         Lecturer existingLecturer = lecturerService.findById(id);
         existingLecturer.setTitle(lecturer.getTitle());
@@ -43,7 +44,7 @@ public class LecturerController {
         return existingLecturer;
     }
 
-    @GetMapping("/lecturer/{id}")
+    @GetMapping("/{id}")
     public Lecturer findById(@PathVariable Long id) {
         return lecturerService.findById(id);
     }

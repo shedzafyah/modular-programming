@@ -9,6 +9,7 @@ import zw.co.afrosoft.service.student.*;
 import java.util.*;
 
 @RestController
+@RequestMapping("/student")
 public class StudentController {
 
     private final StudentService studentService;
@@ -21,24 +22,24 @@ public class StudentController {
         this.emailService = emailService;
     }
 
-    @GetMapping("/students")
+    @GetMapping
     public List<Student> listAll(){
         return studentService.listAll();
     }
 
-    @PostMapping("/student")
+    @PostMapping
     public void add(@RequestBody Student student) {
         if (student != null) {
             studentService.add(student);
             //emailService.sendEmail(student);
         }
     }
-    @DeleteMapping("/student/{id}")
+    @DeleteMapping("/{id}")
     public void remove(@PathVariable Long id) {
         studentService.remove(id);
     }
 
-    @PutMapping("/student/{id}")
+    @PutMapping("/{id}")
     public Student update(@RequestBody Student student, @PathVariable Long id) {
         Student existingStudent = studentService.findById(id);
         existingStudent.setFirstname(student.getFirstname());
@@ -48,7 +49,7 @@ public class StudentController {
         return existingStudent;
     }
 
-    @GetMapping("/student/{id}")
+    @GetMapping("/{id}")
     public Student findById(@PathVariable Long id) {
         return studentService.findById(id);
     }
