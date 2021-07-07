@@ -8,6 +8,7 @@ import zw.co.afrosoft.service.department.DepartmentService;
 import java.util.List;
 
 @RestController
+@RequestMapping("/department")
 public class DepartmentController {
 
     private final DepartmentService departmentService;
@@ -17,22 +18,22 @@ public class DepartmentController {
         this.departmentService = departmentService;
     }
 
-    @GetMapping("/departments")
+    @GetMapping("/")
     public List<Department> listAll(){
         return departmentService.listAll();
     }
 
-    @PostMapping("/department")
+    @PostMapping("/")
     public void addNewDepartment(@RequestBody Department department) {
         departmentService.save(department);
     }
 
-    @DeleteMapping("/department/{id}")
+    @DeleteMapping("/{id}")
     public void remove(@PathVariable Long id) {
         departmentService.remove(id);
     }
 
-    @PutMapping("/department/{id}")
+    @PutMapping("/{id}")
     public Department update(@RequestBody Department department, @PathVariable Long id) {
         Department existingDepartment = departmentService.findById(id);
         existingDepartment.setName(department.getName());
@@ -40,7 +41,7 @@ public class DepartmentController {
         return existingDepartment;
     }
 
-    @GetMapping("/department/{id}")
+    @GetMapping("/{id}")
     public Department findById(@PathVariable Long id) {
         return departmentService.findById(id);
     }
